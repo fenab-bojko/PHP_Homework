@@ -23,5 +23,6 @@ $mass =  Array(
             'Action' =>  'Edit'),
 );
 
+extract($mass);
 include("table.tpl");
 
