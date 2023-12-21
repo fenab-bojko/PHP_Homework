@@ -29,17 +29,15 @@
 </style>
 
 <div class="container">
-    <?php foreach ($data as $elem): ?>
+    <?php foreach ($treeMass as $elem): ?>
     <div class="row">
         <?= $elem; ?>
     </div>
     <?php endforeach; ?>
-    <div>###</div>
-    <div>###</div>
 
-    <form action="AddToys.php" method="_GET">
-        <input name="toys" id="toys" type="number" placeholder="Количество игрушек" >
-        <input name="simbolToys" id="submit" type="text" placeholder="Вид игрушки">
-        <button type="submit">Нарядить елку!</button>
-    </form>
+    ### <form action="AddToys.php" method="_GET">
+    ###     <input name="toys" id="toys" type="number" placeholder="Количество игрушек" >
+    ###     <input name="simbolToys" id="submit" type="text" placeholder="Вид игрушки">
+    ###     <button type="submit">Нарядить елку!</button>
+    ### </form>
 </div>
