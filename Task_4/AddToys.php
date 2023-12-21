@@ -10,7 +10,7 @@ function AddToys ($toys, $simbolToys, $data) {
             $random = rand(1, count($massElem));
 
             foreach($massElem as $i => $item) {
-                if ($random == $i && $toys) {
+                if ($random == $i && $toys && $item !== $simbolToys) {
                     $massElem[$i] = $simbolToys;
                     $toys--;
                     $data[$key] = implode($massElem);

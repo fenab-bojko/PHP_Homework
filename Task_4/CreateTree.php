@@ -8,7 +8,7 @@ function CreateTree ($simbol, $higth) {
         $mass[] = $simbol;
         $massResult[] = implode ($mass);
     }
-    print_r ($massResult);
+    
     return $massResult;
 }
 
