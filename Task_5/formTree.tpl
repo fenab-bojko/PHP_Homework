@@ -32,7 +32,7 @@
 </style>
 
 <div class="container">
-    <?php foreach ($treeMass as $elem): ?>
+    <?php foreach ($data as $elem): ?>
     <div class="row">
         <?= $elem; ?>
     </div>

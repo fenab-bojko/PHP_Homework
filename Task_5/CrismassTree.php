@@ -5,48 +5,57 @@ class CrismassTree {
     private $_simbol = null;
     private $_toys = 0;
     private $_simbolToys = null;
-    private $_rowMass = [];
-    private $_treeMass = [];
+    private $_massTree = [];
+    private $_massTreeToys = [];
+    private $_garlandFlag = false;
 
-    public function __construct ($higth, $simbol) {
+    public function createTree ($higth, $simbol) {
         $this->_higth = $higth;
         $this->_simbol = $simbol;
 
         for ($i = 0; $i < $this->_higth; $i++) {
-            $this->_rowMass[] = $this->_simbol;
-            $this->_treeMass[] = implode($this->_rowMass);
+            $mass[] = $this->_simbol;
+            $this->_massTree[] = implode ($mass);
         }
-
-    extract ($this->_treeMass);
-    include "formTree.tpl";
+        $data = $this->_massTree;
+        extract($data);
+        include 'formTree.tpl';
     }
 
     public function addToys ($toys, $simbolToys) {
         $this->_toys = $toys;
         $this->_simbolToys = $simbolToys;
+        $this->_massTreeToys = $this->_massTree;
 
-        while ($this->_toys) {
-            foreach ($this->_treeMass as $key => $elem) {
+        while ($toys) {
+            foreach ($this->_massTreeToys as $key => $elem) {
                 $massElem = str_split($elem);
                 $random = rand(1, count($massElem));
 
                 foreach($massElem as $i => $item) {
-                    if ($random == $i && $toys) {
+                    if ($random == $i && $toys && $item !== $simbolToys) {
                         $massElem[$i] = $simbolToys;
                         $toys--;
-                        $this->_treeMass[$key] = implode($massElem);
+                        $this->_massTreeToys[$key] = implode($massElem);
                     } else {
-                        $this->_treeMass[$key] = implode($massElem);
+                        $this->_massTreeToys[$key] = implode($massElem);
                     }
                 }
 
             }
         }
-        extract($this->_treeMass);
+        $data = $this->_massTreeToys;
+        extract($data);
         include 'formTree.tpl';
+    }
+    
+    public function toggleGarlandFlag () {
+        $this->_garlandFlag = !$this->_garlandFlag;
     }
 }
 
-$tree = new CrismassTree (12, '$');
+$a = new CrismassTree;
+
+$a->createTree(10, '%');
 sleep(3);
-$tree->addToys(10, '#');
+$a->addToys(10, '*');
