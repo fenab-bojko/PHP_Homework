@@ -37,7 +37,7 @@
     <div>###</div>
     <div>###</div>
 
-    <form action="AddToys.php" method="_GET">
+    <form action="AddToys.php" method="post">
         <input name="toys" id="toys" type="number" placeholder="Количество игрушек" >
         <input name="simbolToys" id="submit" type="text" placeholder="Вид игрушки">
         <button type="submit">Нарядить елку!</button>

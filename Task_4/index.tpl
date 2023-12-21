@@ -30,7 +30,7 @@
 </style>
 
 <div class="container">
-    <form action="CreateTree.php" method="_GET">
+    <form action="CreateTree.php" method="post">
         <input type="number" name="higth" id="higth" placeholder="Высота елки.">
         <input type="text" name="simbol" id="simbol" placeholder="Вид елки.">
         <button type="submit">Создать елку.</button>

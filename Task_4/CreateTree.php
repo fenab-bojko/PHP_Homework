@@ -8,11 +8,13 @@ function CreateTree ($simbol, $higth) {
         $mass[] = $simbol;
         $massResult[] = implode ($mass);
     }
-
+    print_r ($massResult);
     return $massResult;
 }
-$simbol = $_GET['simbol'];
-$higth = $_GET['higth'];
+
+
+$simbol = $_POST['simbol'];
+$higth = $_POST['higth'];
 session_start();
 $data = CreateTree ($simbol, $higth);
 $_SESSION['data'] = $data;

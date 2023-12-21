@@ -24,8 +24,8 @@ function AddToys ($toys, $simbolToys, $data) {
     $result = $data;
     return $result;
 }
-$toys = $_GET['toys'];
-$simbolToys = $_GET['simbolToys'];
+$toys = $_POST['toys'];
+$simbolToys = $_POST['simbolToys'];
 $mass = $_SESSION['data'];
 $data = AddToys ($toys, $simbolToys, $mass);
 extract($data);

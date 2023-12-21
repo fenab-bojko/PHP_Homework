@@ -26,6 +26,9 @@
         border-radius: 4px;
         padding: 5px;
     }
+    .hidden {
+        display: none;
+    }
 </style>
 
 <div class="container">
@@ -35,9 +38,9 @@
     </div>
     <?php endforeach; ?>
 
-    ### <form action="AddToys.php" method="_GET">
-    ###     <input name="toys" id="toys" type="number" placeholder="Количество игрушек" >
-    ###     <input name="simbolToys" id="submit" type="text" placeholder="Вид игрушки">
-    ###     <button type="submit">Нарядить елку!</button>
-    ### </form>
+    <form class="hidden" action="AddToys.php" method="_GET">
+        <input name="toys" id="toys" type="number" placeholder="Количество игрушек" >
+        <input name="simbolToys" id="submit" type="text" placeholder="Вид игрушки">
+        <button type="submit">Нарядить елку!</button>
+    </form>
 </div>
