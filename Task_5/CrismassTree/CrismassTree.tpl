@@ -26,9 +26,6 @@
         border-radius: 4px;
         padding: 5px;
     }
-    .hidden {
-        display: none;
-    }
 </style>
 
 <div class="container">
@@ -37,10 +34,17 @@
         <?= $elem; ?>
     </div>
     <?php endforeach; ?>
+    <div>###</div>
+    <div>###</div>
 
-    <form class="hidden" action="AddToys.php" method="_GET">
+    <form action="index.php" method="post">
         <input name="toys" id="toys" type="number" placeholder="Количество игрушек" >
         <input name="simbolToys" id="submit" type="text" placeholder="Вид игрушки">
         <button type="submit">Нарядить елку!</button>
     </form>
+    <form action="Toys.php/getSimbol" method="post">
+        <div><?= ($simbol = $_SESSION['simbolToys'] ? $_SESSION['simbolToys'] : null) ?></div>
+        <button  type="submit">Вид игрушки</button>
+    </form>
+
 </div>
