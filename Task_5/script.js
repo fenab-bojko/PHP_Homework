@@ -3,9 +3,6 @@ const root = document.getElementById('root')
 const container = document.createElement('div')
 const formCreateTree = document.createElement('div')
 const formAddToys = document.createElement('div')
-let arrTree = document.getElementById('massTree').innerHTML || null
-let mass = []
-let massTree = []
 
 formCreateTree.innerHTML = `
     <form action="index.php" method="post">
@@ -21,18 +18,18 @@ formAddToys.innerHTML = `
     </form>
 `
 
-let arr = [];
-for (let i = 0; i < arrTree.length; i++) {
-    let a = arrTree.charAt(i)
-    if (a !== '[' && a !== ']' && a !== ',' && a !== '"') arr.push(a)
-}
-
-arr.forEach(e => {
-    mass.push(e)
-    massTree.push(mass)
+array.forEach(e => {
+    let row = document.createElement('div')
+    e.forEach(elem => {
+        let item = document.createElement('span')
+        item.innerHTML = elem
+        row.append(item)
+    })
+    container.append(row)
 })
 
-console.log(massTree)
+
+
 
 if(!container.innerHTML) {
     root.append(formCreateTree)

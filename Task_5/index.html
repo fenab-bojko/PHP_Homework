@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div id="root">
 
     </div>
-    <div style="color:gray;" id="massTree"><?= $_SESSION['massTree'] ?></div>
+    <script> let array = <?php echo $_SESSION['massTree']; ?>; </script>
     <script src="script.js"></script>
 </body>
 </html>
