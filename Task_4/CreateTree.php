@@ -1,3 +1,5 @@
+
+
 <?php
 
 function CreateTree ($simbol, $higth) {
@@ -8,7 +10,7 @@ function CreateTree ($simbol, $higth) {
         $mass[] = $simbol;
         $massResult[] = implode ($mass);
     }
-    
+
     return $massResult;
 }
 
@@ -20,4 +22,7 @@ $data = CreateTree ($simbol, $higth);
 $_SESSION['data'] = $data;
 extract($data);
 include 'formTree.tpl';
+?>
+
+
 

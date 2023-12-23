@@ -28,6 +28,10 @@
     }
 </style>
 
+<script>
+    let container = document.querySelector('.container')
+</script>
+
 <div class="container">
     <?php foreach ($data as $elem): ?>
     <div class="row">
