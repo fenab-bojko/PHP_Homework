@@ -1,31 +1,32 @@
 <?php
-include_once 'script.js';
-include_once 'style/css';
-include_once 'CreateTree.php';
-include 'index.html';
+session_start();
 
-
-
-$higth = $_POST['higth'] ? $_POST['higth'] : null;
 $simbol = $_POST['simbol'] ? $_POST['simbol'] : null;
+$higth = $_POST['higth'] ? $_POST['higth'] : null;
 $simbolToys = $_POST['simbolToys'] ? $_POST['simbolToys'] : null;
 
-echo $higth;
-echo $simbol;
-echo $simbolToys;
+include 'Tree.php';
+include 'Toys.php';
+include 'indexForm.tpl';
 
 if ($higth && $simbol) {
-    $tree = new CreateTree;
-    addTree ($tree -> getTree($higth, $simbol));
+    $tree = new Tree();
+    $tree->setTree($higth, $simbol);
+    $data = $tree->getTree();
+    drawTree ($data);
+}
+    
+function drawTree ($data) {
+    extract ($data);
+    include 'treeForm.tpl';
 }
 
 if ($simbolToys) {
     $toys = new Toys();
     $toys->setToys($simbolToys);
-    $toys->getToys();
-}
+    $toy = $toys->getToys();
+    $tree = new Tree;
+    $data = $tree->addToy($toy);
+    drawTree($data);
+} 
 
-function addTree ($mass) {
-    extract ($mass);
-    include 'index.tpl';
-}
