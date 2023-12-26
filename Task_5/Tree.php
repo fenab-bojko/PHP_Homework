@@ -12,6 +12,7 @@ class Tree {
     public function setTree ($higth, $simbol) {
         $this->_higth = $higth;
         $this->_simbol = $simbol;
+        $_SESSION['simbol'] = $simbol;
 
         $mass = [];
         $massTree = [];
@@ -55,6 +56,21 @@ class Tree {
             foreach ($elem as $key => $item) {
                 $count++;
                 $elem[$key] = ($count === $random) ? $toy : $item;
+            }
+            $mass[$k] = $elem;
+        }
+        $_SESSION['massTree'] = $mass;
+        return $mass;
+    }
+
+    public function deleteToy ($toy) {
+        $mass = $_SESSION['massTree'];
+        $simbol = $_SESSION['simbol'];
+        $massToy = [];
+        $massToyResult = [];
+        foreach ($mass as $k => $elem) {
+            foreach ($elem as $key => $item) {
+                $elem[$key] = ($item === $toy) ? $simbol : $item;
             }
             $mass[$k] = $elem;
         }

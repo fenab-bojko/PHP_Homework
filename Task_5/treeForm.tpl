@@ -41,4 +41,8 @@
         <input type="text" name="simbolToys" placeholder="Вид игрушки">
         <button type="submit">Повесить игрушку</button>
     </form>
+     <form action="index.php" method="post">
+        <input type="text" name="deleteToys" placeholder="Какую игрушку снять?">
+        <button type="submit">Снять игрушку</button>
+    </form>
 </div>
