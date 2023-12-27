@@ -16,51 +16,18 @@
 // 6 - 0
 // и т.д
 
-$strInteger = '133244459';
-$arrInteger = str_split ($strInteger);
-
-$zero = 0;
-$one = 0;
-$two = 0;
-$three = 0;
-$four = 0;
-$five = 0;
-$six = 0;
-$seven = 0;
-$eight = 0;
-$nine = 0;
-
-foreach ($arrInteger as $elem) {
-    switch ($elem) {
-        case 0: $zero += 1;
-        break;
-        case 1: $one += 1;
-        break;
-        case 2: $two += 1;
-        break;
-        case 3: $three += 1;
-        break;
-        case 4: $four += 1;
-        break;
-        case 5: $five += 1;
-        break;
-        case 6: $six += 1;
-        break;
-        case 7: $seven += 1;
-        break;
-        case 8: $eight += 1;
-        break;
-        case 9: $nine += 1;
-        break;
+function score ($num) {
+    $massResult = [];
+    for ($i = 0; $i < 10; $i++) {
+        $massResult[$i] = 0;
+    }
+    $mass = str_split($num);
+    foreach ($mass as $elem) {
+        $massResult[$elem]++;
+    }
+    foreach ($massResult as $key => $elem) {
+        echo 'Число: ' . $key . '-' . $elem . 'раз.' . "\n";
     }
 }
-echo "0 - " . $zero . "\n";
-echo "1 - " . $one . "\n";
-echo "2 - " . $two . "\n";
-echo "3 - " . $three . "\n";
-echo "4 - " . $four . "\n";
-echo "5 - " . $five . "\n";
-echo "6 - " . $six . "\n";
-echo "7 - " . $seven . "\n";
-echo "8 - " . $eight . "\n";
-echo "9 - " . $nine . "\n";
+
+score (128374294809384);

@@ -27,6 +27,7 @@
 
     span {
         padding: 2px;
+        color: green;
     }
 
 </style>
