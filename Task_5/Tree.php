@@ -24,8 +24,9 @@ class Tree {
         $_SESSION['massTree'] = $massTree;
     }
 
-    public function toggleGarland () {
-        $this->_garland = !$this->_garland;
+    public function toggleGarland ($garland) {
+        $this->_garland = $garland;
+        echo $this->_garland;
         return $this->_garland;
     }
 

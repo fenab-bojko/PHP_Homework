@@ -21,8 +21,32 @@
         margin-top: 2px;
     }
 
+    .checkbox {
+        display: flex;
+        gap: 10px;
+    }
+
     span {
         padding: 2px;
+    }
+
+    .button {
+        border: 1px solid red;
+        border-radius: 8px;
+        padding: 5px;
+        cursor: pointer;
+        background: red;
+        color: #fff;
+        margin-top: 20px;
+        box-shadow: 0px 0px 4px 4px gray;
+    }
+
+    .button:hover {
+        box-shadow: none;
+    }
+
+    .red {
+        color: red;
     }
 
 </style>
@@ -36,6 +60,7 @@
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
+        <div id="garland" class="button">Включить гирлянду.</div>
     </div>
     <form action="index.php" method="post">
         <input type="text" name="simbolToys" placeholder="Вид игрушки">
@@ -45,4 +70,5 @@
         <input type="text" name="deleteToys" placeholder="Какую игрушку снять?">
         <button type="submit">Снять игрушку</button>
     </form>
+    <script src="script.js"></script>
 </div>

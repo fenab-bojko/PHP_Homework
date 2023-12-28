@@ -38,6 +38,7 @@
             <input type="text" name="simbol" id="simbol" placeholder="Вид ели.">
             <button type="submit">Поставить ель.</button>
         </form>
+        
     </div>
 
     

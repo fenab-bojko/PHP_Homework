@@ -5,6 +5,7 @@ $simbol = $_POST['simbol'] ? $_POST['simbol'] : null;
 $higth = $_POST['higth'] ? $_POST['higth'] : null;
 $simbolToys = $_POST['simbolToys'] ? $_POST['simbolToys'] : null;
 $deleteToys = $_POST['deleteToys'] ? $_POST['deleteToys'] : null;
+$garland = $_POST['garland'] ? true: false;
 
 include 'Tree.php';
 include 'Toys.php';
@@ -35,4 +36,12 @@ if ($deleteToys) {
     $tree = new Tree;
     $data = $tree->deleteToy($deleteToys);
     drawTree($data);
+}
+
+if ($garland) {
+    $tree = new Tree;
+    $tree->toggleGarland($garland);
+} else {
+    $tree = new Tree;
+    $tree->toggleGarland($garland);
 }
